@@ -12,5 +12,5 @@ jobs: # a collection of steps
             curl https://www.npmjs.com/install.sh | sudo bash
             node -v
       - run:
-        name: "Update dependencies and start the app"
-        command: yarn && yarn start
+          name: "Update dependencies and start the app"
+          command: yarn && yarn start
