@@ -13,14 +13,13 @@ const moneySchema = new Schema({
 });
 
 mongoose.model('Money', moneySchema);
-// @TODO change to createdDate
 /**
  * @typedef Element
  * @property {string} user.required
  * @property {string} account.required
  * @property {string[]} tags
  * @property {string} category
- * @property {string} date.required
+ * @property {string} createdDate.required
  * @property {string} image
  * @property {enum} type type for element - eg: income,expense,transfer
  * @property {Money.model} money.required
@@ -30,7 +29,7 @@ const schema = new Schema({
     account: { type: String, required: true },
     tags: [String],
     category: { type: String, required: false },
-    date: { type: String, default: Date.now },
+    createdDate: { type: String, default: Date.now },
     image: { type: String, required: false },
     type: { type: String, enum: TYPES, required: true },
     money: moneySchema,
